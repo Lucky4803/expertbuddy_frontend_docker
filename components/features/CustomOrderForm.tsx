@@ -2,7 +2,13 @@
 
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { Select } from '@/components/ui/select';
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+} from '@/components/ui/select';
 import { Input } from '@/components/ui/input';
 import { Minus, Plus } from 'lucide-react';
 
@@ -20,29 +26,54 @@ export function CustomOrderForm() {
             <h2 className="text-3xl font-bold mb-8">
               Can't find the right project for you? Place a custom order right now!
             </h2>
-            
+
             <div className="grid sm:grid-cols-2 gap-6">
+              {/* Project Type */}
               <div>
                 <label className="block text-sm mb-2">Project Type</label>
-                <Select className="bg-white text-gray-900">
-                  <option>Select project type</option>
+                <Select>
+                  <SelectTrigger className="bg-white text-gray-900">
+                    <SelectValue placeholder="Select project type" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="web">Web Development</SelectItem>
+                    <SelectItem value="mobile">Mobile App</SelectItem>
+                    <SelectItem value="ai">AI/ML</SelectItem>
+                  </SelectContent>
                 </Select>
               </div>
-              
+
+              {/* Education Level */}
               <div>
                 <label className="block text-sm mb-2">Education Level</label>
-                <Select className="bg-white text-gray-900">
-                  <option>Select Education Level</option>
+                <Select>
+                  <SelectTrigger className="bg-white text-gray-900">
+                    <SelectValue placeholder="Select Education Level" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="bachelors">Bachelors</SelectItem>
+                    <SelectItem value="masters">Masters</SelectItem>
+                    <SelectItem value="phd">PhD</SelectItem>
+                  </SelectContent>
                 </Select>
               </div>
-              
+
+              {/* Decline */}
               <div>
                 <label className="block text-sm mb-2">Decline</label>
-                <Select className="bg-white text-gray-900">
-                  <option>Select Decline</option>
+                <Select>
+                  <SelectTrigger className="bg-white text-gray-900">
+                    <SelectValue placeholder="Select Decline" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="it">IT</SelectItem>
+                    <SelectItem value="cs">Computer Science</SelectItem>
+                    <SelectItem value="ee">Electrical Engineering</SelectItem>
+                  </SelectContent>
                 </Select>
               </div>
-              
+
+              {/* Pages */}
               <div>
                 <label className="block text-sm mb-2">Pages</label>
                 <div className="flex items-center bg-white rounded-lg">
@@ -57,8 +88,9 @@ export function CustomOrderForm() {
               </div>
             </div>
 
+            {/* Input and Button */}
             <div className="mt-8">
-              <Input 
+              <Input
                 placeholder="Please fill up the form to find out the price"
                 className="bg-white text-gray-900 mb-4"
               />
