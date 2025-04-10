@@ -2,7 +2,13 @@
 
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { Select } from '@/components/ui/select';
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+} from '@/components/ui/select';
 import { Minus, Plus } from 'lucide-react';
 
 export function PriceCalculator() {
@@ -17,29 +23,54 @@ export function PriceCalculator() {
         >
           <div className="bg-primary rounded-3xl p-8 text-white">
             <h2 className="text-3xl font-bold mb-8">Calculate Price and Order a Custom Work</h2>
-            
+
             <div className="grid sm:grid-cols-2 gap-6">
+              {/* Type of Work */}
               <div>
                 <label className="block text-sm mb-2">Type of Work</label>
-                <Select className="bg-white text-gray-900">
-                  <option>Application Essay</option>
+                <Select>
+                  <SelectTrigger className="bg-white text-gray-900">
+                    <SelectValue placeholder="Select Work Type" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="application-essay">Application Essay</SelectItem>
+                    <SelectItem value="research-paper">Research Paper</SelectItem>
+                    <SelectItem value="dissertation">Dissertation</SelectItem>
+                  </SelectContent>
                 </Select>
               </div>
-              
+
+              {/* Academic Level */}
               <div>
                 <label className="block text-sm mb-2">Academic Level</label>
-                <Select className="bg-white text-gray-900">
-                  <option>Undergraduate/Bachelor</option>
+                <Select>
+                  <SelectTrigger className="bg-white text-gray-900">
+                    <SelectValue placeholder="Select Level" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="undergraduate">Undergraduate/Bachelor</SelectItem>
+                    <SelectItem value="masters">Masters</SelectItem>
+                    <SelectItem value="phd">PhD</SelectItem>
+                  </SelectContent>
                 </Select>
               </div>
-              
+
+              {/* Deadline */}
               <div>
                 <label className="block text-sm mb-2">Deadline</label>
-                <Select className="bg-white text-gray-900">
-                  <option>Select Deadline</option>
+                <Select>
+                  <SelectTrigger className="bg-white text-gray-900">
+                    <SelectValue placeholder="Select Deadline" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="3days">3 Days</SelectItem>
+                    <SelectItem value="5days">5 Days</SelectItem>
+                    <SelectItem value="7days">7 Days</SelectItem>
+                  </SelectContent>
                 </Select>
               </div>
-              
+
+              {/* Pages */}
               <div>
                 <label className="block text-sm mb-2">Pages</label>
                 <div className="flex items-center bg-white rounded-lg">
@@ -54,6 +85,7 @@ export function PriceCalculator() {
               </div>
             </div>
 
+            {/* Price & Button */}
             <div className="mt-8 flex items-center justify-between">
               <div>
                 <span className="text-sm opacity-80">Your Price</span>
