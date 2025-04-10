@@ -48,7 +48,7 @@ const SignInPage = () => {
         <div className="bg-white rounded-xl shadow-2xl p-8 w-full max-w-md relative">
           <div className="flex items-center justify-center gap-2 mb-6">
             <BookOpen size={24} className="text-purple-600" />
-            <h2 className="text-2xl font-bold text-gray-800">ExpertBuddy</h2>
+            <h2 className="text-2xl font-bold text-gray-800">Expert Buddy</h2>
           </div>
           <h3 className="text-xl text-gray-700 mb-6 text-center">Create your account</h3>
           <form onSubmit={handleSignIn} className="space-y-4">
